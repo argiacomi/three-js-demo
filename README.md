@@ -1,4 +1,4 @@
-# three-js-start
+# three-js-starter
 
 ## Three.js starter template using vite
 
