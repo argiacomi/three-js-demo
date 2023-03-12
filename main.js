@@ -116,30 +116,6 @@ export default class ThreeSketch {
 		this.renderer.render(this.scene, this.camera);
 	}
 }
-function initGradientColors(canvas) {
-	let computedCanvasStyle = getComputedStyle(canvas);
-	let sectionColors = ['--gradientColorZero', '--gradientColorOne', '--gradientColorTwo', '--gradientColorThree']
-		.map((color) => {
-			let hex = computedCanvasStyle.getPropertyValue(color).trim();
-			if (4 === hex.length) {
-				const hexTemp = hex
-					.substr(1)
-					.split('')
-					.map((hexTemp) => hexTemp + hexTemp)
-					.join('');
-				hex = hexTemp;
-			}
-			return '0x' + hex.substring(1);
-		})
-		.filter(Boolean)
-		.map(normalizeColor);
-	return sectionColors;
-}
-
-function normalizeColor(hexCode) {
-	return [((hexCode >> 16) & 255) / 255, ((hexCode >> 8) & 255) / 255, (255 & hexCode) / 255];
-	// return new THREE.Color(rgbColor[0], rgbColor[1], rgbColor[2]);
-}
 
 new ThreeSketch({
 	dom: document.querySelector(`[data-js-controller~=Gradient]`)
