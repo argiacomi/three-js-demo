@@ -17,20 +17,6 @@ export default class ThreeSketch {
 		this.time = 0;
 		this.isPlaying = true;
 
-		// this.amp = 320;
-		// this.angle = 0;
-		// this.count = 0;
-		// this.freqX = 14e-5;
-		// this.freqY = 29e-5;
-		// this.resolution = [this.width, this.height];
-		// this.quadCount = this.xSegCount * this.ySegCount * 2;
-		// this.vertexCount = (this.xSegCount + 1) * (this.ySegCount + 1);
-		// this.sectionColors = initGradientColors(this.container);
-		// this.last = 0;
-		// this.seed = 5;
-		// this.a = new THREE.Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-		// this.m = new THREE.Matrix4(2 / this.width, 0, 0, 0, 0, 2 / this.height, 0, 0, 0, 0, 2 / (-2e3 - 2e3), 0, 0, 0, 0, 1);
-
 		this.init();
 		this.addObjects();
 		this.resize();
@@ -98,7 +84,6 @@ export default class ThreeSketch {
 			fragmentShader: fragmentShader
 		});
 
-		// geometry = new THREE.PlaneGeometry(width, height, xSegCount, ySegCount);
 		this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
 
 		this.mesh = new THREE.Mesh(this.geometry, this.material);
