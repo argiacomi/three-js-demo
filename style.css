@@ -1,7 +1,7 @@
-.Gradient__canvas {
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: 100vw;
-	height: 100vh;
+.js-canvas {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
